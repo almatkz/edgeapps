@@ -27,6 +27,10 @@ public class ItemServiceImpl implements ItemService {
         return itemRepository.findAll();
     }
 
+    // TODO: ты пробовал здесь найти findById? если да, тебя возможно смутило что там появился optional,
+    //  в целом это не такая большая проблема ипсользовать deprecated методы, но лучше без них,
+    //  можно примерно так написать itemRepository.findById(id).orElse(null);
+    // и погугли про optional если не знаешь
     @Override
     public Item read(int id) {
         return itemRepository.getOne(id);

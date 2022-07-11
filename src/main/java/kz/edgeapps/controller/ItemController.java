@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+//TODO: плохая практика писать одинаковые эндпоинты на разные методы
 @RestController
 public class ItemController {
 
@@ -18,13 +18,13 @@ public class ItemController {
         this.itemService = itemService;
     }
 
-    @PostMapping(value = "/products")
+    @PostMapping(value = "/createProduct")
     public ResponseEntity<?> create(@RequestBody Item item) {
         itemService.create(item);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/products")
+    @GetMapping(value = "/getProducts")
     public ResponseEntity<List<Item>> read() {
         final List<Item> products = itemService.readAll();
 
