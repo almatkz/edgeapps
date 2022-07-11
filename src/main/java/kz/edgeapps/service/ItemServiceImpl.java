@@ -2,7 +2,6 @@ package kz.edgeapps.service;
 
 import kz.edgeapps.model.Item;
 import kz.edgeapps.repository.ItemRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
