@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+//TODO: плохая практика писать одинаковые эндпоинты и функции на разные методы!!!
 @RestController
 public class ItemController {
 
@@ -18,6 +18,7 @@ public class ItemController {
         this.itemService = itemService;
     }
 
+    //TODO: если я вставлю поле id в json файл, то он изменит его, в таком случае ты можешь либо удалить update и оставить этот метод для создания и изменения, либо посавить какие-то ограничения здесь.
     @PostMapping(value = "/products")
     public ResponseEntity<?> create(@RequestBody Item item) {
         itemService.create(item);
@@ -32,7 +33,7 @@ public class ItemController {
                 ? new ResponseEntity<>(products, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-
+    // TODO: ты пробовал вытаскивать несуществующий id? у меня 500 ошибку кидает
     @GetMapping(value = "/products/{id}")
     public ResponseEntity<Item> read(@PathVariable(name = "id") int id) {
         final Item item = itemService.read(id);

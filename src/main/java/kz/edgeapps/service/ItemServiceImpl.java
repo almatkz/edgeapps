@@ -26,6 +26,9 @@ public class ItemServiceImpl implements ItemService {
         return itemRepository.findAll();
     }
 
+    // TODO: Преподолагаю ты видел, что там есть метод findById, но у тебя выходил syntax error.
+    //  В случае если не знаешь что такое Optional, прогугли его(удобная вещь в джаве)
+    //  можно написать что-то в стиле itemRepository.findById(id).orElse(null)
     @Override
     public Item read(int id) {
         return itemRepository.getOne(id);
