@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS products
+(
+    id    INTEGER PRIMARY KEY ,
+    name  VARCHAR(200) NOT NULL ,
+    description VARCHAR(254) NOT NULL ,
+    price BIGINT  NOT NULL
+);
+CREATE SEQUENCE products_id_seq START WITH 3 INCREMENT BY 1;
