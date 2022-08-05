@@ -9,13 +9,11 @@ import javax.persistence.*;
 //  скажем как у меня постоянно выходил BAD_REQUEST без какой-либо дополнительной инфы, потратил минут 5-10 на выяснение,не спорю тут я тупанул, но люди часто тупят и лучше работать наверняка)
 //  для передачи Инфы часто используют DTO(Data Transfer Objects) классы, в целом то же самое но без лишних аннотаций и связей.
 @Entity
-@Table(name = "products")
+@Table(name = "product_positions")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Item {
     @Id
     @Column(name = "id")
-    @SequenceGenerator(name = "productsIdSeq", sequenceName = "products_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "productsIdSeq")
     private Integer id;
 
     @Column(name = "name")
